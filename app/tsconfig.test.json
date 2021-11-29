@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "types": ["node", "jest", "react/next", "react-dom/next"],
+    "typeRoots": ["node_modules/@types", "types"]
+  },
+  "include": ["**/*.test.ts", "**/*.test.tsx", "test", "jest.config.ts", "jest.setup.ts"],
+  "exclude": ["node_modules"]
+}

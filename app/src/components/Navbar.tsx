@@ -11,8 +11,7 @@ import {
 import type { FC } from 'react'
 import { Children, isValidElement, ReactElement } from 'react'
 import { FiMenu } from 'react-icons/fi'
-
-import { MobileNavContent } from './MobileNavContent'
+import { MobileNavContent } from 'src/components/MobileNavContent'
 
 const Template: FC = (props) => {
   const children = Children.toArray(props.children).filter<ReactElement>(isValidElement)
@@ -32,7 +31,7 @@ const Template: FC = (props) => {
       </HStack>
       <Spacer />
       <HStack display={{ base: 'none', md: 'flex' }} spacing={3}>
-        {children.find((child) => child.type === UserProfile)?.props.children}
+        {children.find((child) => child.type === Actions)?.props.children}
       </HStack>
 
       <IconButton
@@ -50,7 +49,7 @@ const Template: FC = (props) => {
           <Flex>{children.find((child) => child.type === Brand)?.props.children}</Flex>
           <Stack>{children.find((child) => child.type === Links)?.props.children}</Stack>
           <Divider />
-          <Flex>{children.find((child) => child.type === UserProfile)?.props.children}</Flex>
+          <Flex>{children.find((child) => child.type === Actions)?.props.children}</Flex>
         </Stack>
       </MobileNavContent>
     </Flex>
@@ -59,6 +58,6 @@ const Template: FC = (props) => {
 
 const Brand: React.FC = () => null
 const Links: React.FC = () => null
-const UserProfile: React.FC = () => null
+const Actions: React.FC = () => null
 
-export const Navbar = Object.assign(Template, { Brand, Links, UserProfile })
+export const Navbar = Object.assign(Template, { Brand, Links, Actions })

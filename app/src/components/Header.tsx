@@ -1,9 +1,9 @@
 import { Box, Center, useColorModeValue as mode } from '@chakra-ui/react'
 
+import { ColorModeToggle } from './ColorModeToggle'
 import { Logo } from './Logo'
 import { Navbar } from './Navbar'
 import { NavLink } from './NavLink'
-import { UserProfile } from './UserProfile'
 
 export const Header = () => (
   <Box
@@ -29,15 +29,11 @@ export const Header = () => (
         </Center>
       </Navbar.Brand>
       <Navbar.Links>
-        <NavLink isActive>Start</NavLink>
+        <NavLink isActive>Home</NavLink>
       </Navbar.Links>
-      <Navbar.UserProfile>
-        <UserProfile
-          name="Christian Schröter"
-          avatarUrl="https://ca.slack-edge.com/T024F7F15-UJVQ359SP-81fc55875723-512"
-          email="mail@chidori-ui.com"
-        />
-      </Navbar.UserProfile>
+      <Navbar.Actions>
+        <ColorModeToggle />
+      </Navbar.Actions>
     </Navbar>
   </Box>
 )

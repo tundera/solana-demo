@@ -13,7 +13,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['simple-import-sort', 'import'],
+  plugins: ['simple-import-sort', 'import', 'testing-library'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -81,6 +81,7 @@ module.exports = {
         'plugin:jest/recommended',
         'plugin:jest-dom/recommended',
         'plugin:jest-formatting/recommended',
+        'plugin:testing-library/react',
         'plugin:prettier/recommended',
       ],
       parserOptions: {
